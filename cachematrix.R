@@ -1,3 +1,4 @@
+
 ## define the get fucntion - returns value of the matrix argument
 ## define the set function to assign new 
 ## This function creates a special "matrix" object that can cache its inverse
@@ -5,12 +6,15 @@
 makeCacheMatrix <- function(x = matrix()) {
   makeCacheMatrix <- function(x = matrix()) { 
       x <<- y                           
-      inv <<- NULL                       
+      inv <<- NULL     
+      ## initialize inv as NULL; will hold value of matrix inverse 
     }
     get <- function() x                  
-    
-    setinverse <- function(inverse) inv <<- inverse  
-    getinverse <- function() inv                     
+    ## define the get fucntion - returns value of the matrix argument
+    setinverse <- function(inverse) inv <<- inverse 
+    ## assigns value of inv in parent environment
+    getinverse <- function() inv    
+    ## gets the value of inv where called
     list(set = set, get = get, setinverse = setinverse, getinverse = getinverse) 
   }
 
